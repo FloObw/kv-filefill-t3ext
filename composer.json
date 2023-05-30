@@ -1,5 +1,5 @@
 {
-    "name": "ichhabrecht/filefill",
+    "name": "kv/filefill",
     "description": "Find and fetch missing local files from different remotes",
     "type": "typo3-cms-extension",
     "keywords": [
