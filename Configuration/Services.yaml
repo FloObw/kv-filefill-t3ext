@@ -1,0 +1,34 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    IchHabRecht\Filefill\EventListener\ResourceStorageInitializationEventListener:
+        tags:
+            -   name: psr.logger_aware
+            -   name: event.listener
+                identifier: 'filefillResourceStorageInitializationEventListener'
+                event: TYPO3\CMS\Core\Resource\Event\AfterResourceStorageInitializationEvent
+
+    IchHabRecht\Filefill\EventListener\FileProcessingEventEventListener:
+        tags:
+            -   name: event.listener
+                identifier: 'filefillFileProcessingEventEventListener'
+                event: TYPO3\CMS\Core\Resource\Event\BeforeFileProcessingEvent
+
+    IchHabRecht\Filefill\EventListener\ModifyFlexFormDataStructureEventListener:
+        tags:
+            -   name: event.listener
+                identifier: 'filefillModifyFlexFormDataStructureEventListener'
+                event: TYPO3\CMS\Core\Configuration\Event\AfterFlexFormDataStructureParsedEvent
+
+    IchHabRecht\Filefill\Command\DeleteCommand:
+        tags:
+            - name: 'console.command'
+              command: 'filefill:delete'
+
+    IchHabRecht\Filefill\Command\ResetCommand:
+        tags:
+            - name: 'console.command'
+              command: 'filefill:reset'

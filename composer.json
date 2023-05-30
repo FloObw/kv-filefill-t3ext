@@ -1,0 +1,59 @@
+{
+    "name": "ichhabrecht/filefill",
+    "description": "Find and fetch missing local files from different remotes",
+    "type": "typo3-cms-extension",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "file",
+        "missing",
+        "placeholder"
+    ],
+    "homepage": "https://github.com/IchHabRecht/filefill",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Nicole Cordes",
+            "email": "typo3@cordes.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "typo3/cms-core": "^10.4.11 || ^11.5 || ^12.4"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^6.16 || ^7.0 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "IchHabRecht\\Filefill\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IchHabRecht\\Filefill\\Tests\\": "Tests/"
+        }
+    },
+    "replace": {
+        "typo3-ter/filefill": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin",
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "4.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "filefill",
+            "app-dir": ".Build",
+            "web-dir": ".Build/public"
+        }
+    }
+}
